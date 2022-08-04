@@ -14,11 +14,11 @@
         margin-bottom: 10px;
     }
     .form-control {
-        border: 2px solid #1783c4;
+        border: 2px solid #ff0000;
     }
     .btn-primary {
-        border-color: #178acf;
-        background-color: #178acf;
+        border-color: #ff0000;
+        background-color: #ff0000;
     }
     .input-number .form-control:focus {
         box-shadow: none;
@@ -38,31 +38,34 @@
                                 <h3 class="card-title">Billing details</h3>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <x-input name="name" placeholder="Name" :value="$user->name" />
+                                        <label class="d-block">আপনার নাম <span class="text-danger">*</span></label>
+                                        <x-input name="name" :value="$user->name" />
                                         <x-error field="name" />
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <x-input name="phone" placeholder="Phone Number" :value="$user->phone_number ?? ''" />
+                                        <label class="d-block">আপনার ফোন নম্বর <span class="text-danger">*</span></label>
+                                        <x-input name="phone" :value="$user->phone_number ?? ''" />
                                         <x-error field="phone" />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="d-block">Delivery Area <span class="text-danger">*</span></label>
+                                    <label class="d-block">ডেলিভারি এলাকা <span class="text-danger">*</span></label>
                                     @php $dcharge = setting('delivery_charge') @endphp
                                     <div class="form-control @error('shipping') is-invalid @enderror h-auto">
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" class="custom-control-input" id="inside-dhaka" name="shipping" value="Inside Dhaka" data-val="{{ $dcharge->inside_dhaka ?? config('services.shipping.Inside Dhaka') }}">
-                                            <label class="custom-control-label" for="inside-dhaka">Inside Dhaka</label>
+                                            <label class="custom-control-label" for="inside-dhaka">ঢাকার ভেতরে</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" class="custom-control-input" id="outside-dhaka" name="shipping" value="Outside Dhaka" data-val="{{ $dcharge->outside_dhaka ?? config('services.shipping.Outside Dhaka') }}">
-                                            <label class="custom-control-label" for="outside-dhaka">Outside Dhaka</label>
+                                            <label class="custom-control-label" for="outside-dhaka">ঢাকার বাহিরে</label>
                                         </div>
                                     </div>
                                     <x-error field="shipping" />
                                 </div>
                                 <div class="form-group">
-                                    <x-textarea name="address" placeholder="Address">{{ $user->address }}</x-textarea>
+                                    <label class="d-block">আপনার ঠিকানা <span class="text-danger">*</span></label>
+                                    <x-textarea name="address">{{ $user->address }}</x-textarea>
                                     <x-error field="address" />
                                 </div>
                             </div>

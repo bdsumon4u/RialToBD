@@ -59,8 +59,8 @@
                                 </div>
                                 <div class="product-card__buttons">
                                     @exp($available = !$product->should_track || $product->stock_count > 0)
-                                    <button class="btn btn-primary product-card__addtocart" type="button" {{ $available ? '' : 'disabled' }}>Add To Cart</button>
-                                    <button class="btn btn-primary product-card__ordernow" type="button" {{ $available ? '' : 'disabled' }}>Order Now</button>
+                                    <button class="btn btn-primary product-card__addtocart" type="button" {{ $available ? '' : 'disabled' }}><strong>কার্ট এ যোগ করুন</strong></button>
+                                    <button class="btn btn-primary product-card__ordernow" type="button" {{ $available ? '' : 'disabled' }}><strong>অর্ডার করুন</strong></button>
                                 </div>
                             </div>
                         </div>

