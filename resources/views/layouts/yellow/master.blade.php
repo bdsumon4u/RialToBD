@@ -71,7 +71,7 @@
             font-size: 70% !important;
             /* padding-left: 0.5rem !important;
             padding-right: 0.5rem !important; */
-            padding: 0.75rem 0.15rem !important;
+            padding: 0.5rem 0.15rem !important;
             border-radius: 0 !important;
             display: block;
             width: 100%;

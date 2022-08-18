@@ -114,7 +114,7 @@
                                         @exp($available = !$product->should_track || $product->stock_count > 0)
                                         <div class="product__buttons d-flex flex-wrap">
                                             <div class="product__actions-item product__actions-item--addtocart">
-                                                <button class="btn btn-primary product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>কার্ট এ যোগ করুন</strong></button>
+                                                <button class="btn btn-primary product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>কার্ট এ রাখুন</strong></button>
                                             </div>
                                             <div class="product__actions-item product__actions-item--ordernow">
                                                 <button class="btn btn-primary product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>অর্ডার করুন</strong></button>
