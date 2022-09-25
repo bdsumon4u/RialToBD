@@ -80,6 +80,7 @@ class CheckoutController extends Controller
 
             \LaravelFacebookPixel::createEvent('Purchase', ['currency' => 'USD', 'value' => data_get(json_decode($data['data'], true), 'subtotal')]);
 
+            // $data['address'] = "District: {$data['district']}, Thana: {$data['thana']},\nStreet: {$data['address']}";
             $order = Order::create($data);
             $user->notify(new OrderPlaced($order));
             return $order;

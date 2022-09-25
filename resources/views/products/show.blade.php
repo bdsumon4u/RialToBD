@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="{{ asset('strokya/vendor/xzoom/xzoom.css') }}">
     <link rel="stylesheet" href="{{ asset('strokya/vendor/xZoom-master/example/css/demo.css') }}">
     <style>
+        .topbar-phone {
+            width: 170px;
+        }
         #accordion .card-link {
             display: block;
             font-size: 20px;
@@ -114,17 +117,17 @@
                                         @exp($available = !$product->should_track || $product->stock_count > 0)
                                         <div class="product__buttons d-flex flex-wrap">
                                             <div class="product__actions-item product__actions-item--addtocart">
-                                                <button class="btn btn-primary product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>কার্ট এ রাখুন</strong></button>
+                                                <button class="btn btn-primary product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>@lang('checkout.AddToCart')</strong></button>
                                             </div>
                                             <div class="product__actions-item product__actions-item--ordernow">
-                                                <button class="btn btn-primary product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>অর্ডার করুন</strong></button>
+                                                <button class="btn btn-primary product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}><strong>@lang('checkout.OrderNow')</strong></button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="call-for-order">
                                     <img src="{{ asset('call-now-icon-20.jpg') }}" width="135" alt="Call For Order">
-                                    <div style="padding: 10px;margin-bottom: 10px;font-weight: bold;color: red;">
+                                    <div style="padding: 10px;margin-bottom: 10px;font-weight: bold;color: #f57224;">
                                         {!! implode('<br>', explode(' ', setting('call_for_order'))) !!}
                                     </div>
                                 </div>

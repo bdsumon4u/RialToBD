@@ -9,12 +9,12 @@
                         {{ $title }}
                     @endisset
                 </h3>
-                <div class="block-header__divider"></div>
+                {{-- <div class="block-header__divider"></div>
                 @isset($section)
                     <a href="{{ route('products.index', ['section' => $section->id]) }}" class="btn btn-sm ml-0 block-header__arrows-list">
                         View All
                     </a>
-                @endisset
+                @endisset --}}
             </div>
         @endif
         <div class="products-view__list products-list" data-layout="grid-{{ $cols ?? 5 }}-full" data-with-features="false">
@@ -59,8 +59,8 @@
                                 </div>
                                 <div class="product-card__buttons">
                                     @exp($available = !$product->should_track || $product->stock_count > 0)
-                                    <button class="btn btn-primary product-card__addtocart" type="button" {{ $available ? '' : 'disabled' }}><strong>কার্ট এ রাখুন</strong></button>
-                                    <button class="btn btn-primary product-card__ordernow" type="button" {{ $available ? '' : 'disabled' }}><strong>অর্ডার করুন</strong></button>
+                                    <button class="btn btn-primary product-card__addtocart" type="button" {{ $available ? '' : 'disabled' }}><strong>@lang('checkout.AddToCart')</strong></button>
+                                    <button class="btn btn-primary product-card__ordernow" type="button" {{ $available ? '' : 'disabled' }}><strong>@lang('checkout.OrderNow')</strong></button>
                                 </div>
                             </div>
                         </div>

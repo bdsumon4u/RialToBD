@@ -23,7 +23,7 @@
                                     <ul class="menu menu--layout--classic">
                                         @foreach ($category->childrens as $category)
                                             <li>
-                                                <a href="{{ route('categories.products', $category->category) }}">{{ $category->category->name }}
+                                                <a href="{{ route('categories.products', $category->category) }}">{!! $category->category->name !!}
                                                     @if ($category->childrens->isNotEmpty())
                                                         <svg class="menu__arrow" width="6px" height="9px">
                                                             <use
@@ -37,7 +37,7 @@
                                                         <!-- .menu -->
                                                         <ul class="menu menu--layout--classic">
                                                             @foreach($category->childrens as $category)
-                                                                <li><a href="{{ route('categories.products', $category->category) }}">{{ $category->category->name }}</a></li>
+                                                                <li><a href="{{ route('categories.products', $category->category) }}">{!! $category->category->name !!}</a></li>
                                                             @endforeach
                                                         </ul>
                                                         <!-- .menu / end -->
@@ -59,7 +59,7 @@
                     xlink:href="{{ asset('strokya/images/sprite.svg#menu-18x14') }}">
                 </use>
             </svg>
-            Shop By Category
+            Categories
             <svg class="departments__button-arrow" width="9px" height="6px">
                 <use
                     xlink:href="{{ asset('strokya/images/sprite.svg#arrow-rounded-down-9x6') }}">

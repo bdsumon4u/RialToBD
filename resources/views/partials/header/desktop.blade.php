@@ -17,8 +17,8 @@
                     <form action="/shop">
                         <div style="grid-area:search" class="md:ml-4"><div class="Searchbar__CustomCombobox-xnx3kr-6 joXPnU transition-all duration-75 ease-linear overflow-initial" data-reach-combobox="" data-state="idle"><div class="Searchbar__Container-xnx3kr-1 kWQExC" style="
     display: flex;
-"><input name="search" aria-autocomplete="both" aria-controls="listbox--1" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="demo" role="combobox" placeholder="Search for..." data-reach-combobox-input="" data-state="idle" value="{{ request('search') }}" style="
-    background-color: white;
+"><input name="search" aria-autocomplete="both" aria-controls="listbox--1" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="demo" role="combobox" placeholder="Search in {{ $company->name }}" data-reach-combobox-input="" data-state="idle" value="{{ request('search') }}" style="
+    background-color: #f5f5f5;
     letter-spacing: 0.025em;
     font-weight: 500;
     font-size: 0.875rem;
@@ -26,10 +26,11 @@
     display: flex;
     flex: 1 1 0%;
     padding: 0px 17px;
-    border: 2px solid #3d464d;
+    border: 0px solid #3d464d;
     border-radius: 4px 0px 0px 4px;
     outline: none;
     width: 100%;
+    color: #212121;
 ">
 
 <button type="submit" style="border: none; padding: 0;">
@@ -38,11 +39,11 @@
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    padding-right: 29px;
-    padding-left: 29px;
-    background: #3d464d;
+    justify-content: center;
+    background: #f57224;
     color: rgb(255, 255, 255);
     height: 40px;
+    width: 40px;
     min-height: 100%;
     margin: 0;
 "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" _css2="

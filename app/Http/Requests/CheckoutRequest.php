@@ -40,6 +40,8 @@ class CheckoutRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required|regex:/^\+8801\d{9}$/',
             'email' => 'nullable',
+            'district' => 'nullable',
+            'thana' => 'nullable',
             'address' => 'required',
             'note' => 'nullable',
             'products' => 'required|array',

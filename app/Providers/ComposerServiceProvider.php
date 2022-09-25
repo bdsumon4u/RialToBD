@@ -59,6 +59,7 @@ class ComposerServiceProvider extends ServiceProvider
         $settingsPages = [
             'partials.header.*',
             'partials.footer',
+            'partials.topbar',
             'products.show',
             'admin.layouts.master',
             'admin.orders.show',

@@ -53,15 +53,15 @@
         serverSide: true,
         ajax: "{!! route('api.images.single') !!}",
         columns: [
-            { data: 'preview' },
-            { data: 'filename', name: 'filename' },
-            { data: 'mime', name: 'mime' },
-            { data: 'size_human', name: 'size' },
-            { data: 'action' },
+            { data: 'preview', sortable: false },
+            { data: 'filename', name: 'filename', sortable: false },
+            { data: 'mime', name: 'mime', sortable: false },
+            { data: 'size_human', name: 'size', sortable: false },
+            { data: 'action', sortable: false },
         ],
-        order: [
-            [1, 'desc']
-        ],
+        // order: [
+        //     [1, 'desc']
+        // ],
     });
 
     table.on('draw', function () {

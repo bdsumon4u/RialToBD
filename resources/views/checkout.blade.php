@@ -14,11 +14,15 @@
         margin-bottom: 10px;
     }
     .form-control {
-        border: 2px solid #ff0000;
+        border: 1px solid #d5d5d5;
+    }
+    .form-control:focus {
+        border-color: #f57224;
+        box-shadow: none;
     }
     .btn-primary {
-        border-color: #ff0000;
-        background-color: #ff0000;
+        border-color: #f57224;
+        background-color: #f57224;
     }
     .input-number .form-control:focus {
         box-shadow: none;
@@ -35,38 +39,46 @@
                     <div class="col-12 col-md-8 pr-1">
                         <div class="card mb-lg-0">
                             <div class="card-body p-3">
-                                <h3 class="card-title">Billing details</h3>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label class="d-block">আপনার নাম <span class="text-danger">*</span></label>
-                                        <x-input name="name" :value="$user->name" />
-                                        <x-error field="name" />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="d-block">আপনার ফোন নম্বর <span class="text-danger">*</span></label>
-                                        <x-input name="phone" :value="$user->phone_number ?? ''" />
-                                        <x-error field="phone" />
-                                    </div>
+                                <h3 class="card-title">Billing Details</h3>
+                                <div class="form-group">
+                                    <label class="d-block">Your Name <span class="text-danger">*</span></label>
+                                    <x-input name="name" :placeholder="__('checkout.YourName')" :value="$user->name" />
+                                    <x-error field="name" />
                                 </div>
                                 <div class="form-group">
-                                    <label class="d-block">ডেলিভারি এলাকা <span class="text-danger">*</span></label>
+                                    <label class="d-block">Mobile Number <span class="text-danger">*</span></label>
+                                    <x-input name="phone" :placeholder="__('checkout.PhoneNumber')" :value="$user->phone_number ?? ''" />
+                                    <x-error field="phone" />
+                                </div>
+                                {{-- <div class="form-group">
+                                    <label class="d-block">@lang('checkout.District') <span class="text-danger">*</span></label>
+                                    <x-input name="district" :value="$user->district ?? ''" />
+                                    <x-error field="district" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="d-block">@lang('checkout.Thana') <span class="text-danger">*</span></label>
+                                    <x-input name="thana" :value="$user->thana ?? ''" />
+                                    <x-error field="thana" />
+                                </div> --}}
+                                <div class="form-group">
+                                    <label class="d-block">Full Address <span class="text-danger">*</span></label>
+                                    <x-textarea name="address" :placeholder="__('checkout.FullAddress')">{{ $user->address }}</x-textarea>
+                                    <x-error field="address" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="d-block">@lang('checkout.DeliveryArea') <span class="text-danger">*</span></label>
                                     @php $dcharge = setting('delivery_charge') @endphp
                                     <div class="form-control @error('shipping') is-invalid @enderror h-auto">
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" class="custom-control-input" id="inside-dhaka" name="shipping" value="Inside Dhaka" data-val="{{ $dcharge->inside_dhaka ?? config('services.shipping.Inside Dhaka') }}">
-                                            <label class="custom-control-label" for="inside-dhaka">ঢাকার ভেতরে</label>
+                                            <label class="custom-control-label" for="inside-dhaka">@lang('checkout.InsideDhaka')</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
                                             <input type="radio" class="custom-control-input" id="outside-dhaka" name="shipping" value="Outside Dhaka" data-val="{{ $dcharge->outside_dhaka ?? config('services.shipping.Outside Dhaka') }}">
-                                            <label class="custom-control-label" for="outside-dhaka">ঢাকার বাহিরে</label>
+                                            <label class="custom-control-label" for="outside-dhaka">@lang('checkout.OutsideDhaka')</label>
                                         </div>
                                     </div>
                                     <x-error field="shipping" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="d-block">আপনার ঠিকানা <span class="text-danger">*</span></label>
-                                    <x-textarea name="address">{{ $user->address }}</x-textarea>
-                                    <x-error field="address" />
                                 </div>
                             </div>
                             <div class="card-divider d-md-none"></div>

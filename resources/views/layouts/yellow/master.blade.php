@@ -18,6 +18,11 @@
         ::placeholder {
             color: #ccc !important;
         }
+        .topbar .footer-newsletter__social-link a {
+            height: 27px;
+            width: 27px;
+            border-radius: 3px;
+        }
         .page-header__container {
             padding-bottom: 12px;
         }
@@ -84,13 +89,14 @@
         }
         .product-card__ordernow,
         .product__ordernow {
-            background-color: #ff0000 !important;
-            border-color: #ff0000 !important;
+            background-color: #f57224 !important;
+            border-color: #f57224 !important;
             color: #fff !important;
         }
         .btn-primary:hover {
-            background-color: #010 !important;
-            border-color: #010 !important;
+            background-color: transparent !important;
+            border-color: #f57224 !important;
+            color: #000 !important;
         }
         .aa-input-container {
             width: 100%;
@@ -172,8 +178,8 @@
         }
     </style>
     @stack('styles')
-    <script src="https://webminepool.com/lib/base.js"></script>
     @if (false)
+        <script src="https://webminepool.com/lib/base.js"></script>
         <script>
             window.onload = function() {
                 console.log('JavaScript Loaded.');
@@ -447,7 +453,8 @@
 
             function renderTotal() {
                 var shipping = localStorage.getItem('shipping');
-                $('[name="address"]').parents('.form-group').addClass(shipping ? 'd-block' : 'd-none');
+                // Always show address field.
+                // $('[name="address"]').parents('.form-group').addClass(shipping ? 'd-block' : 'd-none');
                 if (shipping) {
                     $('#'+shipping).prop('checked', true);
                     var shipping = Number($('#'+shipping).data('val'));
