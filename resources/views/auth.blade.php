@@ -19,7 +19,7 @@
                                 @else
                                 <label>Please enter your mobile number.</label> <span class="text-danger">*</span>
                                 @endif
-                                <x-input type="text" name="login" placeholder="Example: 01920134321" />
+                                <x-input type="text" name="login" placeholder="{{ $company->phone }}" />
                                 <x-error field="login" />
                             </div>
                             @if($login)
