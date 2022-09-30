@@ -10,7 +10,7 @@
                 <a class="topbar-link" href="{{ url($item->href) }}">{!! $item->name !!}</a>
             </div>
             @endforeach
-            <div class="topbar__spring w-100">
+            <div class="topbar__spring w-100" style="padding: 5px; line-height: 22px;">
                 <marquee class="d-flex align-items-center h-100" behavior="" direction="">{!! $scroll_text ?? '' !!}</marquee>
             </div>
             <ul class="d-none d-md-flex footer-newsletter__social-links m-0 mx-1">
